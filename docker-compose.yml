@@ -1,0 +1,8 @@
+some-website.com:
+  container_name: some-website.com
+  image: nginx
+  volumes:
+    - ~/docker-volumes/some-website.com/site/:/usr/share/nginx/html
+  labels:
+    - 'traefik.backend=some-website.com'
+    - 'traefik.frontend.rule=Host:www.some-website.com,some-website.com'
